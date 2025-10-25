@@ -1,5 +1,6 @@
 import time
 import math
+import numba
 from numba import njit, prange
 import numpy as np
 
@@ -30,7 +31,7 @@ def monte_carlo_numba():
 
     return 4 * dentroCircunferencia / n
 
-@njit(cache=True)
+@numba.jit(cache=True)
 def monte_carlo_numba_cache():
     dentroCircunferencia = 0
 
@@ -50,7 +51,7 @@ def calculos(piEstimado):
     print(f"Valor n: {n}")
     print(f"π: {math.pi} \nπ Estimado: {piEstimado:.4f}")
     print(f"Erro absoluto: {erroAbsoluto:.4f}")
-    print(f"Erro percentual: {erroPercentual:.4f}")
+    print(f"Erro percentual: {erroPercentual:.4f}\n")
 
 
 print("Puro")
