@@ -18,7 +18,7 @@ def monte_carlo_puro():
 
     return 4 * dentroCircunferencia/n
 
-@njit()
+@njit(parallel=True)
 def monte_carlo_numba():
     dentroCircunferencia = 0
 
@@ -31,7 +31,7 @@ def monte_carlo_numba():
 
     return 4 * dentroCircunferencia / n
 
-@numba.jit(cache=True)
+@numba.jit(parallel=True,cache=True)
 def monte_carlo_numba_cache():
     dentroCircunferencia = 0
 
