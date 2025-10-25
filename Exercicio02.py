@@ -17,6 +17,9 @@ for _ in range(n):
 piEstimado = 4 * dentroCircunferencia/n
 final = time.time()
 erroAbsoluto = math.fabs(math.pi - piEstimado)
+erroPercentual = (erroAbsoluto/math.pi) * 100
 
+print(f"Valor n: {n}")
 print(f"π: {math.pi} \nπ~: {piEstimado:.4f} \nTempo: {final-inicio:.6f} s")
 print(f"Erro absoluto: {erroAbsoluto:.4f}")
+print(f"Erro percentual: {erroPercentual:.4f}")
