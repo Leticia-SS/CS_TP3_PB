@@ -4,22 +4,27 @@ import math
 
 n = 10000000
 
-inicio = time.time()
-dentroCircunferencia = 0
+def monte_carlo_puro():
+    inicio = time.time()
+    dentroCircunferencia = 0
 
-for _ in range(n):
-    x = random.random()
-    y = random.random()
+    for _ in range(n):
+        x = random.random()
+        y = random.random()
 
-    if x**2 + y**2 <= 1:
-        dentroCircunferencia += 1
+        if x**2 + y**2 <= 1:
+            dentroCircunferencia += 1
 
-piEstimado = 4 * dentroCircunferencia/n
-final = time.time()
-erroAbsoluto = math.fabs(math.pi - piEstimado)
-erroPercentual = ((math.pi-piEstimado)/math.pi)*100
+    piEstimado = 4 * dentroCircunferencia/n
+    final = time.time()
+    erroAbsoluto = math.fabs(math.pi - piEstimado)
+    erroPercentual = ((math.pi-piEstimado)/math.pi)*100
 
-print(f"Valor n: {n}")
-print(f"π: {math.pi} \nπ~: {piEstimado:.4f} \nTempo: {final-inicio:.6f} s")
-print(f"Erro absoluto: {erroAbsoluto:.4f}")
-print(f"Erro percentual: {erroPercentual:.4f}")
+    print(f"Valor n: {n}")
+    print(f"π: {math.pi} \nπ~: {piEstimado:.4f} \nTempo: {final-inicio:.6f} s")
+    print(f"Erro absoluto: {erroAbsoluto:.4f}")
+    print(f"Erro percentual: {erroPercentual:.4f}")
+
+monte_carlo_puro()
+
+
