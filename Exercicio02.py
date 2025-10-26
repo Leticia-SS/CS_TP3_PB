@@ -4,7 +4,7 @@ import numba
 from numba import njit, prange
 import numpy as np
 
-n = 10000000
+n = 1000000
 
 def monte_carlo_puro():
     dentroCircunferencia = 0
